@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 00:41:26 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ class Animal {
     virtual void    makeSound() const;
 };
 
-std::ostream &operator<<(std::ostream &COUT, const Animal &Animal);
+std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal);

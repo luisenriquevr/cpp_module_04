@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 00:38:06 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
+/*   Updated: 2023/05/01 15:03:49 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include <iostream>
+#include "RGB.hpp"
 
-class WrongDog : virtual public WrongAnimal {
+class Animal {
+   protected:
+    std::string     type;
+
    public:
-    WrongDog();
-    WrongDog(const WrongDog &toCopy);
-    WrongDog &operator=(const WrongDog &toCopy);
-    virtual ~WrongDog();
+    Animal();
+    explicit Animal(const std::string &_type);
+    Animal(const Animal &toCopy);
+    Animal &operator=(const Animal &toCopy);
+    virtual ~Animal();
 
-    const std::string   getType() const;
-    void    makeSound() const;
+    virtual const std::string   getType() const;
+    virtual void    makeSound() const;
 };
 
-std::ostream    &operator<<(std::ostream &COUT, const WrongDog &WrongDog);
+std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal);

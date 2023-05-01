@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 00:38:06 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Created: 2023/05/01 14:59:18 by lvarela           #+#    #+#             */
+/*   Updated: 2023/05/01 15:17:31 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include <iostream>
+#include <string>
+#include "RGB.hpp"
 
-class WrongDog : virtual public WrongAnimal {
+class Brain {
+   private:
+    std::string _idea[100];
+
    public:
-    WrongDog();
-    WrongDog(const WrongDog &toCopy);
-    WrongDog &operator=(const WrongDog &toCopy);
-    virtual ~WrongDog();
+	Brain();
+	Brain(const Brain &toCopy);
+	virtual ~Brain();
 
-    const std::string   getType() const;
-    void    makeSound() const;
+	Brain   &operator=(const Brain &toCopy);
 };
-
-std::ostream    &operator<<(std::ostream &COUT, const WrongDog &WrongDog);

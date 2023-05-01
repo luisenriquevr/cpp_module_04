@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:06 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:03:56 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-class WrongDog : virtual public WrongAnimal {
+class Cat : virtual public Animal {
    public:
-    WrongDog();
-    WrongDog(const WrongDog &toCopy);
-    WrongDog &operator=(const WrongDog &toCopy);
-    virtual ~WrongDog();
+    Cat();
+    Cat(const Cat &toCopy);
+    Cat &operator=(const Cat &toCopy);
+    virtual ~Cat();
 
-    const std::string   getType() const;
-    void    makeSound() const;
+    virtual const std::string   getType() const;
+    virtual void    makeSound() const;
 };
 
-std::ostream    &operator<<(std::ostream &COUT, const WrongDog &WrongDog);
+std::ostream    &operator<<(std::ostream &COUT, const Cat &Cat);
