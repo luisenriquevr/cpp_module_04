@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:03:49 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 20:31:25 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal {
     Animal &operator=(const Animal &toCopy);
     virtual ~Animal();
 
-    virtual const std::string   getType() const;
+    const std::string   getType() const;
     virtual void    makeSound() const;
 };
 

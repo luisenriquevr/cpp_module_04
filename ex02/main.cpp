@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:29:55 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:54:13 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 21:02:03 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 int main() {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    const Animal perro("perro");
+    //const Animal perro("perro");
 
     i->makeSound();
-    perro.makeSound();
-
+    //perro.makeSound();
+    
     delete j;//should not create a leak
     delete i;
 

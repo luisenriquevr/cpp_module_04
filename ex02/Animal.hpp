@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:31:34 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 21:00:08 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal {
     virtual ~Animal();
 
     const std::string   getType() const;
-    virtual void    makeSound() const;
+    virtual void    makeSound() const = 0;
 };
 
 std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal);

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:31:34 by lvarela          ###   ########.fr       */
+/*   Created: 2023/05/01 00:38:06 by lvarela           #+#    #+#             */
+/*   Updated: 2023/05/02 19:35:10 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include "RGB.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Animal {
-   protected:
-    std::string     type;
+class Cat : virtual public Animal {
+   private:
+    Brain   *_brain;
 
    public:
-    Animal();
-    explicit Animal(const std::string &_type);
-    Animal(const Animal &toCopy);
-    Animal &operator=(const Animal &toCopy);
-    virtual ~Animal();
+    Cat();
+    Cat(const Cat &toCopy);
+    Cat &operator=(const Cat &toCopy);
+    virtual ~Cat();
 
-    const std::string   getType() const;
+    virtual const std::string   getType() const;
     virtual void    makeSound() const;
 };
 
-std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal);
+std::ostream    &operator<<(std::ostream &COUT, const Cat &Cat);

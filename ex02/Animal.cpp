@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:32:36 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 21:01:39 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ Animal::~Animal() {
 
 const std::string   Animal::getType() const {
     return this->type;
-}
-
-void    Animal::makeSound() const {
-    std::cout << "¿?" << std::endl;
 }
 
 std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal) {
