@@ -6,25 +6,24 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 10:28:47 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 19:32:23 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
-    this->_brain = new Brain();
+Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
     std::cout << YELLOW << "[Cat] Default constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &toCopy) {
-    *this = toCopy;
+Cat::Cat(const Cat &toCopy) : Animal(), _brain(new Brain(*toCopy._brain)) {
     std::cout << YELLOW << "[Cat] Copy constructor called" << RESET << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &toCopy) {
     if (this != &toCopy) {
         this->type = toCopy.type;
+        this->_brain = new Brain(*toCopy._brain);
         std::cout << YELLOW << "[Cat] Assigned constructor called" << RESET << std::endl;
     }
     return *this;
