@@ -6,13 +6,14 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:50:28 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 10:29:48 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() : Animal("Dog") {
+    this->_brain = new Brain();
     std::cout << GREEN << "[Dog] Default constructor called" << RESET << std::endl;
 }
 
@@ -30,6 +31,7 @@ Dog &Dog::operator=(const Dog &toCopy) {
 }
 
 Dog::~Dog() {
+    delete this->_brain;
     std::cout << GREEN << "[Dog] Destructor called" << RESET << std::endl;
 }
 

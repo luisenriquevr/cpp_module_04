@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:59:18 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:17:31 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 10:21:35 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Brain {
    private:
-    std::string _idea[100];
+    std::string ideas[100];
 
    public:
 	Brain();

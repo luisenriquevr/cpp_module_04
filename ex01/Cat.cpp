@@ -6,13 +6,14 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 10:28:47 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
+    this->_brain = new Brain();
     std::cout << YELLOW << "[Cat] Default constructor called" << RESET << std::endl;
 }
 
@@ -30,6 +31,7 @@ Cat &Cat::operator=(const Cat &toCopy) {
 }
 
 Cat::~Cat() {
+    delete this->_brain;
     std::cout << YELLOW << "[Cat] Destructor called" << RESET << std::endl;
 }
 

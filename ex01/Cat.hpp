@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:06 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:03:56 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/02 10:28:37 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : virtual public Animal {
+   private:
+    Brain   *_brain;
+
    public:
     Cat();
     Cat(const Cat &toCopy);
