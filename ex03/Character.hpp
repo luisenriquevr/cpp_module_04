@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 00:29:44 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/03 00:43:02 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/04 18:20:18 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-class Character {
+class Character : public ICharacter {
    private:
-    std::string const _name;
+    std::string _name;
 	AMateria *_inventory[4];
 
    public:
@@ -25,6 +25,10 @@ class Character {
 	explicit Character(std::string const &type);
 	Character(Character const &toCopy);
 	~Character();
+
+	Character &operator=(Character const &toCopy);
+
+	std::string const & getName() const;
 
 	void equip(AMateria *materia);
 	void unequip(int idx);

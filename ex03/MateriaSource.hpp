@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 23:19:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/03 17:46:00 by lvarela          ###   ########.fr       */
+/*   Created: 2023/05/04 17:43:51 by lvarela           #+#    #+#             */
+/*   Updated: 2023/05/04 20:19:16 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "IMateriaSource.hpp"
 
-Ice::Ice() : AMateria("ice") {
-}
+class MateriaSource : public IMateriaSource {
+   private:
+    std::string const _name;
 
-Ice::Ice(Ice const &toCopy) {
-	*this = toCopy;
-}
+   public:
+	MateriaSource();
+	explicit MateriaSource(std::string const &);
+	MateriaSource(MateriaSource const &toCopy);
+	~MateriaSource();
 
-Ice &Ice::operator=(Ice const &toCopy) {
-	if (this != &toCopy) {
-		this->_type = toCopy._type;
-	}
-	return *this;
-}
-
-AMateria *Ice::clone() const {
-	return new Ice();
-}
-
-Ice::~Ice() {
-}
-
-void Ice::use(ICharacter &target) {
-	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
-}
+	MateriaSource &operator=(MateriaSource const &toCopy);
+	void learnMateria(AMateria*);
+	AMateria *createMateria(std::string const &type);
+};
