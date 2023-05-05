@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/03 17:46:00 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 17:25:33 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ AMateria *Ice::clone() const {
 }
 
 Ice::~Ice() {
+	delete this;
 }
 
 void Ice::use(ICharacter &target) {

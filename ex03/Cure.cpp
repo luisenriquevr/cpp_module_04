@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:36 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/03 17:46:09 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 17:25:19 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ Cure &Cure::operator=(Cure const &toCopy) {
 }
 
 AMateria *Cure::clone() const {
-	return new Cure();
+	return new Cure(*this);
 }
 
 Cure::~Cure() {
+	delete this;
 }
 
 void Cure::use(ICharacter &target) {

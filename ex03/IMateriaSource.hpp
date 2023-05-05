@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:33:50 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/04 20:19:04 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 14:06:28 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class IMateriaSource
 {
    public:
 	virtual ~IMateriaSource() {}
+
 	virtual void learnMateria(AMateria*) = 0;
 	virtual AMateria *createMateria(std::string const &type) = 0;
 };

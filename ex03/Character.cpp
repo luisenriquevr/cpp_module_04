@@ -6,37 +6,38 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 00:29:32 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/04 19:24:32 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 17:18:15 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : _name("No name") {
-	for (unsigned short int i = 0; i < 4; i++) {
-		this->_inventory[i] = NULL;
-	}
+Character::Character() : _name("No name"), _inventory() {
+	//for (unsigned short int i = 0; i < 4; i++) {
+	//	this->_inventory[i] = NULL;
+	//}
 }
 
-Character::Character(std::string const &type) : _name(type) {
-	for (unsigned short int i = 0; i < 4; i++) {
-		this->_inventory[i] = NULL;
-	}
+Character::Character(std::string const &name) : _name(name), _inventory() {
+	//for (unsigned short int i = 0; i < 4; i++) {
+	//	this->_inventory[i] = NULL;
+	//}
 }
 
 Character::Character(Character const &toCopy) {
+	this->_name = toCopy._name;
 	for (unsigned short int i = 0; i < 4; i++) {
 		this->_inventory[i] = toCopy._inventory[i];
 	}
-	*this = toCopy;
+//	*this = toCopy;
 }
 
 Character &Character::operator=(Character const &toCopy) {
 	if (this != &toCopy) {
 		this->_name = toCopy._name;
-		for (unsigned short int i = 0; i < 4; i++) {
-			(this->_inventory[i] != NULL) ? delete this->_inventory[i] : void();
-		}
+		//for (unsigned short int i = 0; i < 4; i++) {
+		//	(this->_inventory[i] != NULL) ? delete this->_inventory[i] : void();
+		//}
 		for (unsigned short int i = 0; i < 4; i++) {
 			(this->_inventory[i] != NULL) ? this->_inventory[i] = toCopy._inventory[i]->clone() : this->_inventory[i] = NULL;
 		}
