@@ -6,13 +6,16 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:43:49 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 18:11:25 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/06 16:54:50 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource() {
+    for (unsigned short int i = 0; i < 4; i++)
+        this->_learnedMaterias[i] = NULL;
+}
 
 MateriaSource::MateriaSource(MateriaSource const &toCopy) {
     *this = toCopy;
@@ -47,6 +50,6 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
 }
 
 MateriaSource::~MateriaSource() {
-        for(int i = 0; i < 4; ++i)
+        for(int i = 0; i < 4; i++)
             (this->_learnedMaterias[i]) ? delete this->_learnedMaterias[i] : void();
 }

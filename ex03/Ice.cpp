@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 18:02:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/06 16:24:23 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice() : AMateria("ice") {
 }
 
-Ice::Ice(Ice const &toCopy) {
+Ice::Ice(Ice const &toCopy) : AMateria(toCopy._type) {
 	*this = toCopy;
 }
 

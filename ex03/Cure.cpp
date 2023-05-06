@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:36 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 18:07:05 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/06 16:35:22 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure() : AMateria("cure") {
 }
 
-Cure::Cure(Cure const &toCopy) {
+Cure::Cure(Cure const &toCopy) : AMateria(toCopy._type) {
 	*this = toCopy;
 }
 
