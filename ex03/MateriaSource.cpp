@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:43:49 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 17:26:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 18:11:25 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,7 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
     return 0;
 }
 
-MateriaSource::~MateriaSource() {}
+MateriaSource::~MateriaSource() {
+        for(int i = 0; i < 4; ++i)
+            (this->_learnedMaterias[i]) ? delete this->_learnedMaterias[i] : void();
+}

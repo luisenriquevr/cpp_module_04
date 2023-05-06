@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:36 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 17:25:19 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 18:07:05 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ AMateria *Cure::clone() const {
 }
 
 Cure::~Cure() {
-	delete this;
 }
 
 void Cure::use(ICharacter &target) {

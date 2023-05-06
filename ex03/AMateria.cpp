@@ -6,15 +6,17 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:44:42 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 14:40:55 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 18:12:12 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : _type("No type") {}
+AMateria::AMateria() : _type("No type") {
+}
 
-AMateria::AMateria(std::string const &type) : _type(type) {}
+AMateria::AMateria(std::string const &type) : _type(type) {
+}
 
 AMateria::AMateria(AMateria const &toCopy) {
     *this = toCopy;

@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 00:29:32 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 17:18:15 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/05 18:23:17 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ Character::Character(Character const &toCopy) {
 	for (unsigned short int i = 0; i < 4; i++) {
 		this->_inventory[i] = toCopy._inventory[i];
 	}
-//	*this = toCopy;
+	*this = toCopy;
 }
 
-Character &Character::operator=(Character const &toCopy) {
+Character &Character::operator=(Character const &toCopy) { // TODO: revisar esta funcion
 	if (this != &toCopy) {
 		this->_name = toCopy._name;
-		//for (unsigned short int i = 0; i < 4; i++) {
-		//	(this->_inventory[i] != NULL) ? delete this->_inventory[i] : void();
-		//}
 		for (unsigned short int i = 0; i < 4; i++) {
-			(this->_inventory[i] != NULL) ? this->_inventory[i] = toCopy._inventory[i]->clone() : this->_inventory[i] = NULL;
+			(this->_inventory[i] != NULL) ? delete this->_inventory[i] : void(); // TODO: no estoy seguro de que sea necesario
+		}
+		for (unsigned short int i = 0; i < 4; i++) {
+			(this->_inventory[i] == NULL) ? this->_inventory[i] = toCopy._inventory[i]->clone() : NULL; // TODO: Se puede utilizar this->equip() en vez de clone()
 		}
 	}
 	return *this;
@@ -70,6 +70,6 @@ void Character::use(int idx, ICharacter &target) {
 
 Character::~Character() {
 	for (unsigned short int i = 0; i < 4; i++) {
-		(this->_inventory[i] != NULL) ? delete this->_inventory[i] : void();
+		delete this->_inventory[i];
 	}
 }

@@ -6,7 +6,7 @@
 #    By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 18:00:26 by lvarela           #+#    #+#              #
-#    Updated: 2023/05/02 22:36:03 by lvarela          ###   ########.fr        #
+#    Updated: 2023/05/05 18:01:52 by lvarela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC		=	c++
 CPPSTD	=	-std=c++98
 FLAGS	=	-Wall -Werror -Wextra -Wshadow
 RM		=	rm -rf
-NAME	=	Interface&recap
+NAME	=	Interface\&recap
 
 all		:	$(NAME)
 
