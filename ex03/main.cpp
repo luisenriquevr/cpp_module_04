@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:36:49 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/06 17:05:26 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 16:16:46 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,8 @@ int main(void)
 {
 	IMateriaSource* src = new MateriaSource();
 
-	Ice *ice = new Ice();
-	Cure *cure = new Cure();
-
-	src->learnMateria(ice);
-	src->learnMateria(cure);
-
-	delete ice;
-	delete cure;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
 	ICharacter* me = new Character("me");
 
@@ -37,13 +31,13 @@ int main(void)
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
-	
+
 	me->use(0, *bob);
 	me->use(1, *bob);
 
 	delete bob;
 	delete me;
 	delete src;
-	
+
 	return 0;
 }

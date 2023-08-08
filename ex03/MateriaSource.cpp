@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:43:49 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/06 16:54:50 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/20 19:45:10 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void MateriaSource::learnMateria(AMateria *newMateria) {
     if (newMateria) {
         for (unsigned short int i = 0; i < 4; i++) {
             if (this->_learnedMaterias[i] == NULL) {
-                this->_learnedMaterias[i] = newMateria->clone();
+                this->_learnedMaterias[i] = newMateria;
                 return ;
             }
         }
