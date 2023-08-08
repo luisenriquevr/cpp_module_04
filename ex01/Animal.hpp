@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:31:25 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:44:49 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 
 class Animal {
    protected:
-    std::string     type;
+    std::string     _type;
 
    public:
     Animal();
-    explicit Animal(const std::string &_type);
+    explicit Animal(const std::string &type);
     Animal(const Animal &toCopy);
     Animal &operator=(const Animal &toCopy);
     virtual ~Animal();
 
-    const std::string   getType() const;
+    virtual const std::string   getType() const;
     virtual void    makeSound() const;
 };
 

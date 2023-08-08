@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:18:54 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ const std::string   WrongAnimal::getType() const {
 }
 
 void    WrongAnimal::makeSound() const {
-    std::cout << "¿?" << std::endl;
+    std::cout << "[WrongAnimal] ¿?" << std::endl;
 }
 
 std::ostream    &operator<<(std::ostream &COUT, const WrongAnimal &WrongAnimal) {

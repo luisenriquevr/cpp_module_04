@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 19:32:23 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 20:02:00 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,17 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
 }
 
 Cat::Cat(const Cat &toCopy) : Animal(), _brain(new Brain(*toCopy._brain)) {
+	// this->_type = toCopy.getType();
+	// this->_brain = new Brain(*toCopy._brain);
     std::cout << YELLOW << "[Cat] Copy constructor called" << RESET << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &toCopy) {
     if (this != &toCopy) {
-        this->type = toCopy.type;
+        this->_type = toCopy._type;
         this->_brain = new Brain(*toCopy._brain);
+        // this->_type = toCopy.getType();
+        // this->_brain = toCopy._brain;
         std::cout << YELLOW << "[Cat] Assigned constructor called" << RESET << std::endl;
     }
     return *this;
@@ -35,11 +39,15 @@ Cat::~Cat() {
 }
 
 const std::string   Cat::getType() const {
-    return this->type;
+    return this->_type;
 }
 
 void    Cat::makeSound() const {
     std::cout << YELLOW << "[Cat] meows" << RESET << std::endl;
+}
+
+Brain   *Cat::getBrain(void) const {
+	return this->_brain;
 }
 
 std::ostream    &operator<<(std::ostream &COUT, const Cat &Cat) {

@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:50:51 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat(const Cat &toCopy) {
 
 Cat &Cat::operator=(const Cat &toCopy) {
     if (this != &toCopy) {
-        this->type = toCopy.type;
+        this->_type = toCopy._type;
         std::cout << YELLOW << "[Cat] Assigned constructor called" << RESET << std::endl;
     }
     return *this;
@@ -34,7 +34,7 @@ Cat::~Cat() {
 }
 
 const std::string   Cat::getType() const {
-    return this->type;
+    return this->_type;
 }
 
 void    Cat::makeSound() const {

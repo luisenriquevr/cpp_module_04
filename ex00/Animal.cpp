@@ -6,17 +6,17 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 20:32:36 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:17:47 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("¿?") {
+Animal::Animal() : _type("¿?") {
     std::cout << RED << "[Animal] Default constructor called" << RESET << std::endl;
 }
 
-Animal::Animal(const std::string &_type) : type(_type) {
+Animal::Animal(const std::string &type) : _type(type) {
     std::cout << RED << "[Animal] Type constructor called" << RESET << std::endl;
 }
 
@@ -27,7 +27,7 @@ Animal::Animal(const Animal &toCopy) {
 
 Animal &Animal::operator=(const Animal &toCopy) {
     if (this != &toCopy) {
-        this->type = toCopy.type;
+        this->_type = toCopy._type;
         std::cout << RED << "[Animal] Assigned constructor called" << RESET << std::endl;
     }
     return *this;
@@ -38,11 +38,11 @@ Animal::~Animal() {
 }
 
 const std::string   Animal::getType() const {
-    return this->type;
+    return this->_type;
 }
 
 void    Animal::makeSound() const {
-    std::cout << "¿?" << std::endl;
+    std::cout << "[Animal] ¿?" << std::endl;
 }
 
 std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal) {
