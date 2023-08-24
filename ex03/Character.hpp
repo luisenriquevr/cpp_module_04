@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 00:29:44 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/05 14:29:21 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 17:55:04 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character : public ICharacter {
 
     Character &operator=(Character const &toCopy);
 
-    std::string const & getName() const;
+    std::string const &getName() const;
 
     void equip(AMateria *materia);
     void unequip(int idx);

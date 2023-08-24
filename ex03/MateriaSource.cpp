@@ -6,15 +6,17 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:43:49 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/20 19:45:10 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 18:21:06 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
+#include "RGB.hpp"
 
 MateriaSource::MateriaSource() {
     for (unsigned short int i = 0; i < 4; i++)
         this->_learnedMaterias[i] = NULL;
+	std::cout << MAGENTA << "Materia created" << RESET << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const &toCopy) {

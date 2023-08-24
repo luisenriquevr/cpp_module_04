@@ -6,16 +6,17 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:19:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/06 16:24:23 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 18:20:39 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "RGB.hpp"
 
 Ice::Ice() : AMateria("ice") {
 }
 
-Ice::Ice(Ice const &toCopy) : AMateria(toCopy._type) {
+Ice::Ice(Ice const &toCopy) : AMateria("ice") {
 	*this = toCopy;
 }
 
@@ -27,12 +28,12 @@ Ice &Ice::operator=(Ice const &toCopy) {
 }
 
 AMateria *Ice::clone() const {
-	return new Ice();
+	return new Ice(*this);
 }
 
 Ice::~Ice() {
 }
 
 void Ice::use(ICharacter &target) {
-	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
+	std::cout << BLUE << "* shoots an ice bolt at " << target.getName() << " *" << RESET << std::endl;
 }
