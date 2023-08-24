@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/08/08 20:02:00 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:54:42 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
     std::cout << YELLOW << "[Cat] Default constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &toCopy) : Animal(), _brain(new Brain(*toCopy._brain)) {
-	// this->_type = toCopy.getType();
-	// this->_brain = new Brain(*toCopy._brain);
+Cat::Cat(const Cat &toCopy) : Animal(toCopy), _brain(new Brain(*toCopy._brain)) {
     std::cout << YELLOW << "[Cat] Copy constructor called" << RESET << std::endl;
 }
 
@@ -26,8 +24,6 @@ Cat &Cat::operator=(const Cat &toCopy) {
     if (this != &toCopy) {
         this->_type = toCopy._type;
         this->_brain = new Brain(*toCopy._brain);
-        // this->_type = toCopy.getType();
-        // this->_brain = toCopy._brain;
         std::cout << YELLOW << "[Cat] Assigned constructor called" << RESET << std::endl;
     }
     return *this;

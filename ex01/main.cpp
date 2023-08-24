@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:29:55 by lvarela           #+#    #+#             */
-/*   Updated: 2023/08/08 20:09:47 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:32:02 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int main( void ) {
 	std::cout << "Diablo idea 2: " << diablo->getBrain()->getIdea(2) << std::endl;
 	std::cout << "Diablo idea non existing: " << diablo->getBrain()->getIdea(3) << std::endl;
 
-	delete diablo;
-
 	Cat *quebrantahuesos = new Cat(*diablo);
 	quebrantahuesos->getBrain()->setIdea(0, "ROAR I TURNED INTO A LION");
 
@@ -44,8 +42,6 @@ int main( void ) {
 	std::cout << "Quebrantahuesos idea 1: " << quebrantahuesos->getBrain()->getIdea(1) << std::endl;
 	std::cout << "Quebrantahuesos idea 2: " << quebrantahuesos->getBrain()->getIdea(2) << std::endl;
 	std::cout << "Quebrantahuesos idea non existing: " << quebrantahuesos->getBrain()->getIdea(3) << std::endl;
-
-	delete quebrantahuesos;
 
 	Dog *drako = new Dog();
 	drako->getBrain()->setIdea(0, "WOOF");
@@ -57,8 +53,6 @@ int main( void ) {
 	std::cout << "Drako idea 2: " << drako->getBrain()->getIdea(2) << std::endl;
 	std::cout << "Drako idea non existing: " << drako->getBrain()->getIdea(3) << std::endl;
 
-	delete quebrantahuesos;
-
 	Dog *roko = new Dog(*drako);
 	roko->getBrain()->setIdea(0, "WTF IS THAT CAT DOING");
 
@@ -67,23 +61,25 @@ int main( void ) {
 	std::cout << "Roko idea 2: " << roko->getBrain()->getIdea(2) << std::endl;
 	std::cout << "Roko idea non existing: " << roko->getBrain()->getIdea(3) << std::endl;
 
-	delete roko;
-
 	delete j;
 	delete i;
+	delete diablo;
+	delete quebrantahuesos;
+	delete drako;
+	delete roko;
 
-	// Animal *animals[10];
+	Animal *animals[10];
 
-	// for(int i = 0; i < 10; i++)
-	// {
-	// 	if (i < 5)
-	// 		animals[i] = new Dog();
-	// 	else
-	// 		animals[i] = new Cat();
-	// }
+	for(int i = 0; i < 10; i++)
+	{
+		if (i < 5)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
 
-	// for(int i = 0; i < 10; i++)
-	// 	delete animals[i];
+	for(int i = 0; i < 10; i++)
+		delete animals[i];
 
 	return 0;
 }

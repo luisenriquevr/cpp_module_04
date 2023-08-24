@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 18:05:54 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 21:00:08 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:38:56 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 #include <iostream>
 #include "RGB.hpp"
 
-class Animal {
+class AAnimal {
    protected:
     std::string     type;
 
    public:
-    Animal();
-    explicit Animal(const std::string &_type);
-    Animal(const Animal &toCopy);
-    Animal &operator=(const Animal &toCopy);
-    virtual ~Animal();
+    AAnimal();
+    explicit AAnimal(const std::string &_type);
+    AAnimal(const AAnimal &toCopy);
+    AAnimal &operator=(const AAnimal &toCopy);
+    virtual ~AAnimal();
 
     const std::string   getType() const;
     virtual void    makeSound() const = 0;
 };
 
-std::ostream    &operator<<(std::ostream &COUT, const Animal &Animal);
+std::ostream    &operator<<(std::ostream &COUT, const AAnimal &AAnimal);

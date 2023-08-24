@@ -6,16 +6,16 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:50:30 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 10:29:34 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:42:24 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : virtual public Animal {
+class Dog : virtual public AAnimal {
    private:
     Brain   *_brain;
 

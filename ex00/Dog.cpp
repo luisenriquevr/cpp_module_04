@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:50:28 by lvarela           #+#    #+#             */
-/*   Updated: 2023/08/08 17:51:06 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:52:08 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ Dog::Dog() : Animal("Dog") {
     std::cout << GREEN << "[Dog] Default constructor called" << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &toCopy) {
-    *this = toCopy;
+Dog::Dog(const Dog &toCopy) : Animal(toCopy) {
     std::cout << GREEN << "[Dog] Copy constructor called" << RESET << std::endl;
 }
 

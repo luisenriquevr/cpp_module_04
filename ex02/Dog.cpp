@@ -6,19 +6,18 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:50:28 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 19:35:44 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:49:52 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog() : AAnimal("Dog") {
     this->_brain = new Brain();
     std::cout << GREEN << "[Dog] Default constructor called" << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &toCopy) {
-    *this = toCopy;
+Dog::Dog(const Dog &toCopy) : AAnimal(toCopy), _brain(new Brain(*toCopy._brain)) {
     std::cout << GREEN << "[Dog] Copy constructor called" << RESET << std::endl;
 }
 

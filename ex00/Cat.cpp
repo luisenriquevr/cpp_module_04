@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/08/08 17:50:51 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:50:35 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ Cat::Cat() : Animal("Cat") {
     std::cout << YELLOW << "[Cat] Default constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &toCopy) {
-    *this = toCopy;
+Cat::Cat(const Cat &toCopy) : Animal(toCopy) {
     std::cout << YELLOW << "[Cat] Copy constructor called" << RESET << std::endl;
 }
 

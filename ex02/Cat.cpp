@@ -6,17 +6,17 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:38:40 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/02 19:32:23 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/08/24 16:48:38 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain()) {
     std::cout << YELLOW << "[Cat] Default constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &toCopy) : Animal(), _brain(new Brain(*toCopy._brain)) {
+Cat::Cat(const Cat &toCopy) : AAnimal(toCopy), _brain(new Brain(*toCopy._brain)) {
     std::cout << YELLOW << "[Cat] Copy constructor called" << RESET << std::endl;
 }
 
